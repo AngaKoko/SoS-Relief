@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">SOS Relief</string>
+
+    <string name="earthquake">Earthquake</string>
+    <string name="volcano">Volcano</string>
+    <string name="flood">Flood</string>
+    <string name="wildfire">Wildfire</string>
+    <string name="visuals">Visuals</string>
+    <string name="threats">Threats</string>
+    <string name="data">Data</string>
+    <string name="safety_measures">Safety Measures</string>
+    <string name="near_the">Near the</string>
+    <string name="before">Before</string>
+    <string name="after">After</string>
+    <string name="during">During</string>
+    <string name="expectations">Expectations</string>
+    <string name="my_go_bag">My go bag</string>
+    <string name="go_bag_name">Go bag name</string>
+    <string name="no_go_bag_description">No go bag, use add button below to create a go bag</string>
+    <string name="weight_of_selected_item">Weight of selected item</string>
+    <string name="weight_of_go_bag">Weight of go bag</string>
+    <string name="add">Add</string>
+
+    <string name="what_to_expect_during_earthquake">What to expect during an earthquake</string>
+    <string name="small_or_medium_quakes">Small or moderate earthquakes</string>
+    <string name="small_quakes_1">1.  These can last only a few seconds and represent no emergency risk.</string>
+    <string name="small_quakes_2">2.  Ceiling lights may move and some minor rattling of objects may occur in your home.</string>
+    <string name="small_quakes_3">3.  You may feel a slight quiver under your feet if you are outside.</string>
+    <string name="small_quakes_4">4.  If you are close to its source, you may hear a loud bang followed by shaking.</string>
+
+    <string name="large_quakes">Large earthquakes</string>
+    <string name="large_quakes_1">1.  These can last up to several minutes and constitute a natural disaster if its epicentre is near a densely populated area, or its magnitude sufficiently large for the region.</string>
+    <string name="large_quakes_2">2.  The ground or floor will move, perhaps violently.</string>
+    <string name="large_quakes_3">3.  Whether far away or close to the source, you will probably feel shaking followed by a rolling motion, much like being at sea.</string>
+    <string name="large_quakes_4">4.  If you are far away from the source, you might see swaying buildings or hear a roaring sound.</string>
+    <string name="large_quakes_5">5.  You may feel dizzy and be unable to walk during the earthquake.</string>
+    <string name="large_quakes_6">6.  If you live in a high rise or a multi-storey building, you may experience more sway and less shaking than in a smaller, single-storey building. Lower floors will shake rapidly, much like residential homes. On upper floors, movement will be slower but the building will move farther from side to side.</string>
+    <string name="large_quakes_7">7.  Furnishings and unsecured objects could fall over or slide across the floor or be thrown with damaging force across the room.</string>
+    <string name="large_quakes_8">8.  Unsecured light fixtures and ceiling panels may fall.</string>
+    <string name="large_quakes_9">9.  Windows may break.</string>
+    <string name="large_quakes_10">10.  Fire alarms and sprinkler systems may be activated.</string>
+    <string name="large_quakes_11">11.  Lights and power may go off.</string>
+
+    <string name="before_an_earthquake">Before an Earthquake</string>
+    <string name="before_an_earthquake_description">Go through your home, imagining what could happen to each part of it, if shaken by a violent earthquake. Check off the items that you have completed in this list.</string>
+    <string name="before_an_earthquake_1">1.  Teach everybody in the family (if they are old enough) how to turn off the water and electricity.</string>
+    <string name="before_an_earthquake_2">2.  Clearly label the on-off positions for the water, electricity and gas.</string>
+    <string name="before_an_earthquake_3">3.  Repair loose roof shingles.</string>
+    <string name="before_an_earthquake_4">4.  Secure water heaters to wall studs or masonry using a bracing kit, to reduce the possibility of the heater falling and rupturing gas and water connections.</string>
+    <string name="before_an_earthquake_5">5.  Secure major appliances to walls, such as refrigerators.</string>
+    <string name="before_an_earthquake_6">6.  Secure costly and heavy electronics.</string>
+    <string name="before_an_earthquake_7">7.  Secure the tops of top-heavy furniture to a wall by anchoring to studs and using flexible fasteners. Keep heavy items on lower shelves.</string>
+    <string name="before_an_earthquake_8">8.  Secure expensive or fragile items that if damaged would be a significant loss.</string>
+    <string name="before_an_earthquake_9">9.  Affix mirrors, paintings and other hanging objects securely, so they won\'t fall off hooks.</string>
+    <string name="before_an_earthquake_10">10.  Locate beds and chairs away from chimneys and windows. Don\'t hang heavy pictures and other items over beds. Closed curtains and blinds will help stop broken window glass from falling on beds.</string>
+    <string name="before_an_earthquake_11">11.  Put anti-skid pads under TVs, computers and other small appliances, or secure them with Velcro or other such product.</string>
+    <string name="before_an_earthquake_12">12.  Use child-proof or safety latches on cupboards to stop contents from spilling out.</string>
+    <string name="before_an_earthquake_13">13.  Keep flammable items and household chemicals away from heat and where they are less likely to spill.</string>
+    <string name="before_an_earthquake_14">14.  Secure items in the garage to reduce hazardous material spills and damage to vehicles.</string>
+    <string name="before_an_earthquake_15">15.  Consult a professional for additional ways to protect your home, such as bolting the house to its foundation and other structural mitigation techniques.</string>
+    <string name="before_an_earthquake_16">16.  If you live in an apartment block or a multi-storey building, work with your building manager or condominium board to decide how best to “quake-safe” your unit. Seek advice from professionals (building engineers, emergency preparedness authorities) if you are unsure about what to do.</string>
+    <string name="before_an_earthquake_17">17.  If you live in a mobile home, you can leave the wheels on the mobile home to limit its fall. Or, you can install a structural bracing system to reduce the chance of your unit falling off its supports. Ensure the awning on your home is securely supported and fastened to the unit. For information on the best way to brace your unit, contact your local mobile home dealer or a mobile home owner\'s association.</string>
+    <string name="before_an_earthquake_18">18.  Review your Emergency Plan with your family (see Step 2 for more information). </string>
+    <string name="before_an_earthquake_19">19.  Have an emergency kit that will sustain you and your family for at least 72 hours (see Step 3 for more information). </string>
+    <string name="before_an_earthquake_20">20.  Discuss earthquake insurance with your insurance broker. Check your coverage – it could affect your financial ability to recover losses after an earthquake.</string>
+
+    <string name="if_indoors_during_earthquake">If you are indoors during an earthquake</string>
+    <string name="ensure_you_do_the_following">Ensure you do the following</string>
+    <string name="earthquake_safety_measures_1">1.  DROP to the ground; take COVER by getting under a sturdy table or other
+        piece of furniture; and HOLD ON until the shaking stops. If there isn’t a table or desk near you, cover your face
+        and head with your arms and crouch in an inside corner of the building.</string>
+    <string name="earthquake_safety_measures_2">2.  Stay away from glass, windows, outside doors and walls, and anything that
+        could fall, such as lighting fixtures or furniture.</string>
+    <string name="earthquake_safety_measures_3">3.  Stay in bed if you are there when the earthquake strikes. Hold on and protect your head with a pillow, unless you are under a heavy light fixture that could fall. In that case, move to the nearest safe place.</string>
+    <string name="earthquake_safety_measures_4">4.  Do not use a doorway except if you know it is a strongly supported, load-bearing doorway and it is close to you. Many inside doorways are lightly constructed and do not offer protection.</string>
+    <string name="earthquake_safety_measures_5">5.  Stay inside until the shaking stops and it is safe to go outside. Do not exit a building during the shaking. Research has shown that most injuries occur when people inside buildings attempt to move to a different location inside the building or try to leave.</string>
+    <string name="earthquake_safety_measures_6">6.  DO NOT use the elevators.</string>
+    <string name="earthquake_safety_measures_7">7.  Be aware that the electricity may go out or the sprinkler systems or fire alarms may turn on.</string>
+
+    <string name="if_your_outdoors_during_earthquake">If you are outdoors during an earthquake</string>
+    <string name="earthquake_safety_measures_outdoors_1">1.  Stay there.</string>
+    <string name="earthquake_safety_measures_outdoors_2">2.  Move away from buildings, streetlights, and utility wires.</string>
+    Once in the open, stay there until the shaking stops. The greatest danger exists directly
+    outside buildings, at exits and alongside exterior walls.
+
+    <string name="if_in_moving_vehicle">If you are in a moving vehicle during an earthquake</string>
+    <string name="earthquake_safety_measures_in_moving_vehicle_1">1.  Stop as quickly as safety permits and stay in the vehicle. Avoid stopping near or under buildings, trees, overpasses, and utility wires.</string>
+    <string name="earthquake_safety_measures_in_moving_vehicle_2">2.  Proceed cautiously once the earthquake has stopped. Avoid roads, bridges, or ramps that might have been damaged by the earthquake.</string>
+
+    <string name="if_trapped_under_debris">If you are trapped under debris</string>
+    <string name="earthquake_safety_measures_under_debris_1">1.  Do not light a match.</string>
+    <string name="earthquake_safety_measures_under_debris_2">2.  Do not move around or kick up dust.</string>
+    <string name="earthquake_safety_measures_under_debris_3">3.  Cover your mouth with a handkerchief or clothing.</string>
+    <string name="earthquake_safety_measures_under_debris_4">4.  Tap on a pipe or wall so rescuers can locate you. Use a whistle if one is available. Shout only as a last resort. Shouting can cause you to inhale dangerous amounts of dust.</string>
+
+    <string name="after_an_earthquake">After an earthquake</string>
+    <string name="after_an_earthquake_1">1.  Stay calm. Help others if you are able.</string>
+    <string name="after_an_earthquake_2">2.  Be prepared for aftershocks. </string>
+    <string name="after_an_earthquake_3">3.  Listen to the radio or television for information from authorities. Follow their instructions.</string>
+    <string name="after_an_earthquake_4">4.  Place corded telephone receivers back in their cradles; only make calls if requiring emergency services.</string>
+    <string name="after_an_earthquake_5">5.  Put on sturdy shoes and protective clothing to help prevent injury from debris, especially broken glass.</string>
+    <string name="after_an_earthquake_6">6.  Check your home for structural damage and other hazards. If you suspect your home is unsafe, do not re-enter.</string>
+    <string name="after_an_earthquake_7">7.  Unplug appliances and broken lights to prevent fire starts when the power is restored.</string>
+    <string name="after_an_earthquake_8">8.  Stay away from brick walls and chimneys as they may be damaged or weakened and could collapse during aftershocks.  Do not use your fireplace if your chimney has been damaged as a fire may start or gases could be released.</string>
+    <string name="after_an_earthquake_9">9.  If you have to leave your home, take your emergency kit and other essential items with you. Post a message in clear view, indicating where you can be found. Do not waste food or water as supplies may be interrupted.</string>
+    <string name="after_an_earthquake_10">10.  Do not light matches or turn on light switches until you are sure there are no gas leaks or flammable liquids spilled. Use a flashlight to check utilities and do not shut them off unless damaged. Leaking gas will smell like rotten eggs.</string>
+    <string name="after_an_earthquake_11">11.  If your home is equipped with natural gas: Call your gas provider immediately to report any concerns or if you smell gas (rotten egg smell). Shut off gas valve if you know how. Once the gas is turned off, don\'t turn it back on. Only a licensed gas technician can turn the gas on safely.</string>
+    <string name="after_an_earthquake_12">12.  If tap water is still available immediately after the earthquake, fill a bathtub and other containers in case the supply gets cut off. If there is no running water, there may be water in the hot water tank (make sure water is not hot before touching it) and toilet reservoir (not the bowl).</string>
+    <string name="after_an_earthquake_13">13.  Do not flush toilets if you suspect sewer lines are broken.</string>
+    <string name="after_an_earthquake_14">14.  Use extreme caution with hazardous materials or spills.  When in doubt, leave your home.</string>
+    <string name="after_an_earthquake_15">15.  Check on your neighbours after looking after members of your own household. Organize rescue measures if people are trapped or call for emergency assistance if you cannot safely help them.</string>
+    <string name="after_an_earthquake_16">16.  If you have pets, try to find and comfort them. If you have to evacuate, take them to a pre-identified pet-friendly shelter.</string>
+    <string name="after_an_earthquake_17">17.  Place a HELP sign in your window if you need assistance.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

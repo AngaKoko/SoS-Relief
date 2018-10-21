@@ -1,0 +1,200 @@
+{
+  "items": [
+    {
+      "name": "Select an item",
+      "weight": "0"
+    },
+    {
+      "name": "Bivi Bag",
+      "weight": "200"
+    },
+    {
+      "name": "Mini shovel",
+      "weight": "2000"
+    },
+    {
+      "name": "Axe",
+      "weight": "2000"
+    },
+    {
+      "name": "Saw",
+      "weight": "4000"
+    },
+    {
+      "name": "Knife",
+      "weight": "200"
+    },
+    {
+      "name": "MRE",
+      "weight": "50"
+    },
+    {
+      "name": "Energy Tablet",
+      "weight": "40"
+    },
+    {
+      "name": "Survuval Rations",
+      "weight": "50"
+    },
+    {
+      "name": "Ration Heaters",
+      "weight": "25"
+    },
+    {
+      "name": "Fire Tinder",
+      "weight": "6"
+    },
+    {
+      "name": "Candle",
+      "weight": "20"
+    },
+    {
+      "name": "Filtration Bottle",
+      "weight": "20"
+    },
+    {
+      "name": "Water Purification Tablet",
+      "weight": ""
+    },
+    {
+      "name": "Purification Straw",
+      "weight": "2"
+    },
+    {
+      "name": "Head Torch",
+      "weight": "350"
+    },
+    {
+      "name": "Hand Torch",
+      "weight": "300"
+    },
+    {
+      "name": "Backup Torch",
+      "weight": "50"
+    },
+    {
+      "name": "Light Stick",
+      "weight": "150"
+    },
+    {
+      "name": "Can Opener",
+      "weight": "220"
+    },
+    {
+      "name": "Spoon",
+      "weight": "50"
+    },
+    {
+      "name": "Stove",
+      "weight": "4000"
+    },
+    {
+      "name": "Batteries",
+      "weight": "100"
+    },
+    {
+      "name": "Duct Tape",
+      "weight": "360"
+    },
+    {
+      "name": "Utility Cord",
+      "weight": "48"
+    },
+    {
+      "name": "Fishing Line",
+      "weight": "600"
+    },
+    {
+      "name": "Brass or Steel Wire",
+      "weight": "2000"
+    },
+    {
+      "name": "Sewing Needle",
+      "weight": "20"
+    },
+    {
+      "name": "Emergency Battery",
+      "weight": "75"
+    },
+    {
+      "name": "Solar Charger",
+      "weight": "300"
+    },
+    {
+      "name": "Compass",
+      "weight": "45"
+    },
+    {
+      "name": "Flare Gun",
+      "weight": "300"
+    },
+    {
+      "name": "Whistle",
+      "weight": "14"
+    },
+    {
+      "name": "Mirror",
+      "weight": "110"
+    },
+    {
+      "name": "Orange Blanket",
+      "weight": "300"
+    },
+    {
+      "name": "Radio",
+      "weight": "120"
+    },
+    {
+      "name": "Walkie Talkie",
+      "weight": "120"
+    },
+    {
+      "name": "Mess Tins",
+      "weight": "150"
+    },
+    {
+      "name": "First Aid Kits",
+      "weight": "500"
+    },
+    {
+      "name": "Insect Protection",
+      "weight": "90"
+    },
+    {
+      "name": "Sun Protection",
+      "Weight": "90"
+    },
+    {
+      "name": "Wound Closure",
+      "Weight": "70"
+    },
+    {
+      "name": "Haemostatic Powder",
+      "Weight": "50"
+    },
+    {
+      "name": "Suction Pump",
+      "Weight": "120"
+    },
+    {
+      "name": "Burrn Dresses",
+      "Weight": "60"
+    },
+    {
+      "name": "SAM Splint",
+      "Weight": "100"
+    },
+    {
+      "name": "Air Filter",
+      "Weight": "200"
+    },
+    {
+      "name": "Maps",
+      "Weight": "100"
+    },
+    {
+      "name": "External Source Of oxygen",
+      "Weight": "6000"
+    }
+  ]
+}
