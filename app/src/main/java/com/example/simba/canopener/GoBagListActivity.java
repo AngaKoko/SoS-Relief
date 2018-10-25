@@ -2,6 +2,7 @@ package com.example.simba.canopener;
 
 import android.app.LoaderManager;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -15,12 +16,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.simba.canopener.data.GoBagContract;
+import com.example.simba.canopener.data.TaskContract;
 import com.example.simba.canopener.loaders.GoBagLoader;
 import com.example.simba.canopener.utils.Utils;
 
@@ -31,7 +32,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class NewGoBagActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class GoBagListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int ITEM_LOADER_ID = 0;
 
@@ -45,6 +46,7 @@ public class NewGoBagActivity extends AppCompatActivity implements LoaderManager
     ArrayList<String> mGoBagArray;
     double mWeightOfItem = 0;
     double mWeightOfBag = 0;
+    String mGoBagName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,13 @@ public class NewGoBagActivity extends AppCompatActivity implements LoaderManager
         mWeightOfBagTextView = findViewById(R.id.weight_of_go_bag_text_view);
         mWeightOfItemTextView = findViewById(R.id.weight_of_item_text_view);
         mGoBagNameEditText = findViewById(R.id.go_bag_name_edit_text);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if(bundle != null){
+            mGoBagName = bundle.getString(TaskContract.GO_BAG_NAME);
+            mGoBagNameEditText.setText(mGoBagName);
+        }
 
         /*
          Ensure a loader is initialized and active. If the loader doesn't already exist, one is
@@ -119,16 +128,15 @@ public class NewGoBagActivity extends AppCompatActivity implements LoaderManager
 
         if(!mGoBagNameEditText.getText().toString().trim().isEmpty()) {
             // [Hint] Don't forget to call finish() to return to MainActivity after this insert is complete
-            //try {
+            try {
                 // Insert the content values via a ContentResolver
                 Uri uri = getContentResolver().insert(GoBagContract.GoBagEntery.CONTENT_GOBAG_URI, contentValues);
                 if (uri != null) {
-                    Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_LONG).show();
                     //restarts the loader to get updated data
                     restartLoader();
                 }
-            //} catch (Exception e) {
-            //}
+            } catch (Exception e) {
+            }
         }else{
             Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
         }
@@ -167,7 +175,7 @@ public class NewGoBagActivity extends AppCompatActivity implements LoaderManager
             }
 
             mSpinner.setAdapter(new ArrayAdapter<String>
-                    (NewGoBagActivity.this, android.R.layout.simple_spinner_dropdown_item, mGoBagArray));
+                    (GoBagListActivity.this, android.R.layout.simple_spinner_dropdown_item, mGoBagArray));
 
 
         }catch (JSONException e){} catch (IOException e) {

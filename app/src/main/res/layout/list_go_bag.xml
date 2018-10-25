@@ -2,12 +2,14 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_medium">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -17,14 +19,20 @@
                 android:id="@+id/go_bag_name_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dim_medium"
-                android:text="@string/go_bag_name"/>
+                android:layout_marginLeft="@dimen/dim_medium"
+                android:text="@string/go_bag_name"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/dim_medium"
+                android:layout_marginBottom="@dimen/dim_small"/>
             <TextView
                 android:id="@+id/time_created_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dim_medium"
                 android:text="time"
+                android:textSize="12sp"
                 android:layout_marginLeft="@dimen/dim_medium" />
         </LinearLayout>
 

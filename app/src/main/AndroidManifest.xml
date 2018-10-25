@@ -41,7 +41,11 @@
             android:name=".WildfireActivity"
             android:label="@string/wildfire" />
         <activity android:name=".GoBagActivity" />
-        <activity android:name=".NewGoBagActivity"></activity>
+        <activity android:name=".GoBagListActivity" />
+        <activity android:name=".dialog.NewGoBagDialogActivity"
+            android:excludeFromRecents="true"
+            android:label=""
+            android:theme="@style/DialogNoTitle"></activity>
     </application>
 
 </manifest>

@@ -8,4 +8,5 @@
     <dimen name="dim_xxx_large">40dp</dimen>
     <dimen name="dim_xxxx_large">48dp</dimen>
     <dimen name="dim_xxxxxx_large">64dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

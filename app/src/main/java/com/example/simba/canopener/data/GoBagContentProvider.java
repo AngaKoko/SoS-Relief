@@ -12,6 +12,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import static com.example.simba.canopener.data.GoBagContract.GoBagEntery.GO_BAG_TABLE_NAME;
+import static com.example.simba.canopener.data.GoBagContract.GoBagEntery.ITEMS_TABLE_NAME;
 
 public class GoBagContentProvider extends ContentProvider {
 
@@ -19,9 +20,11 @@ public class GoBagContentProvider extends ContentProvider {
     // It's convention to use 100, 200, 300, etc for directories,
     // and related ints (101, 102, ..) for items in that directory.
     public static final int GO_BAG = 100;
+    public static final int ITEMS = 101;
 
     //WITH ID
     public static final int GO_BAG_WITH_ID = 200;
+    public static final int ITEMS_WITH_ID = 201;
 
     // CDeclare a static variable for the Uri matcher that you construct
     private static final UriMatcher sUriMatcher = buildUriMatcher();
@@ -42,8 +45,10 @@ public class GoBagContentProvider extends ContentProvider {
           The two calls below add matches for the task directory and a single item by ID.
          */
         uriMatcher.addURI(GoBagContract.AUTHORITY, GoBagContract.PATH_GO_BAG, GO_BAG);
+        uriMatcher.addURI(GoBagContract.AUTHORITY, GoBagContract.PATH_ITEMS, ITEMS);
 
         uriMatcher.addURI(GoBagContract.AUTHORITY, GoBagContract.PATH_GO_BAG + "/#", GO_BAG_WITH_ID);
+        uriMatcher.addURI(GoBagContract.AUTHORITY, GoBagContract.PATH_ITEMS + "/#", ITEMS_WITH_ID);
 
         return uriMatcher;
     }
@@ -73,6 +78,16 @@ public class GoBagContentProvider extends ContentProvider {
             // Query for the tasks directory
             case GO_BAG:
                 retCursor =  db.query(GO_BAG_TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null,
+                        null,
+                        sortOrder);
+                break;
+            //case items
+            case ITEMS:
+                retCursor =  db.query(ITEMS_TABLE_NAME,
                         projection,
                         selection,
                         selectionArgs,
@@ -121,6 +136,16 @@ public class GoBagContentProvider extends ContentProvider {
                     throw new android.database.SQLException("Failed to insert row into " + uri);
                 }
                 break;
+            case ITEMS:
+                // Insert new values into the database
+                // Inserting values into items table
+                id = db.insert(ITEMS_TABLE_NAME, null, values);
+                if ( id > 0 ) {
+                    returnUri = ContentUris.withAppendedId(GoBagContract.GoBagEntery.CONTENT_ITEM_URI, id);
+                } else {
+                    throw new android.database.SQLException("Failed to insert row into " + uri);
+                }
+                break;
             // Set the value for the returnedUri and write the default case for unknown URI's
             // Default case throws an UnsupportedOperationException
             default:
@@ -154,6 +179,13 @@ public class GoBagContentProvider extends ContentProvider {
                 id = uri.getPathSegments().get(1);
                 // Use selections/selectionArgs to filter for this ID
                 tasksDeleted = db.delete(GO_BAG_TABLE_NAME, "_id=?", new String[]{id});
+                break;
+            //Case item
+            case ITEMS_WITH_ID:
+                // Get the task ID from the URI path
+                id = uri.getPathSegments().get(1);
+                // Use selections/selectionArgs to filter for this ID
+                tasksDeleted = db.delete(ITEMS_TABLE_NAME, "_id=?", new String[]{id});
                 break;
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);

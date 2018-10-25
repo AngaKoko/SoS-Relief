@@ -49,4 +49,5 @@
     <color name="gray_gray">#808080</color>
     <color name="silver">#C0C0C0</color>
     <color name="primaryTextColor">#212121</color>
+    <color name="black">#000000</color>
 </resources>
