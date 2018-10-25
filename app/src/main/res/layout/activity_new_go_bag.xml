@@ -48,32 +48,10 @@
                 android:id="@+id/go_bag_name_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/go_bag_name"/>
+                android:hint="@string/go_bag_name"
+                android:editable="false"
+                android:focusableInTouchMode="false"/>
         </android.support.design.widget.TextInputLayout>
-
-        <Spinner
-            android:id="@+id/go_bag_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dim_medium"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dim_small"
-                android:text="@string/weight_of_selected_item"/>
-
-            <TextView
-                android:id="@+id/weight_of_item_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dim_small"
-                android:text="0kg"/>
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,12 +71,59 @@
                 android:text="0kg"/>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lighter_gray"/>
+
+        <Spinner
+            android:id="@+id/go_bag_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dim_small"
+                android:layout_marginLeft="@dimen/dim_small"
+                android:text="@string/weight_of_selected_item"
+                android:layout_marginStart="@dimen/dim_small" />
+
+            <TextView
+                android:id="@+id/weight_of_item_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dim_small"
+                android:layout_marginLeft="@dimen/dim_small"
+                android:text="0kg"
+                android:layout_marginStart="@dimen/dim_small"
+                android:layout_marginBottom="@dimen/dim_small"/>
+        </LinearLayout>
+
         <Button
             android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add"
             android:layout_gravity="end"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lighter_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim_medium"
+            android:text="@string/items_in_my_go_bag"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:gravity="center"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"

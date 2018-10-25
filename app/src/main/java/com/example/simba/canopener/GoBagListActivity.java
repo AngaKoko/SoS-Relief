@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.simba.canopener.Adapter.GoBagItemsAdapter;
 import com.example.simba.canopener.data.GoBagContract;
 import com.example.simba.canopener.data.TaskContract;
 import com.example.simba.canopener.loaders.GoBagLoader;
@@ -32,9 +34,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GoBagListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class GoBagListActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>,
+        GoBagItemsAdapter.GoBagItemsAdapterOnLongClickLHandler, GoBagItemsAdapter.GoBagItemsAdapterOnclickHandler {
 
     private static final int ITEM_LOADER_ID = 0;
+
+    Cursor mCursor;
+    GoBagItemsAdapter mAdapter;
 
     Button mButton;
     RecyclerView mRecyclerView;
@@ -47,6 +53,7 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
     double mWeightOfItem = 0;
     double mWeightOfBag = 0;
     String mGoBagName;
+    long mTimeCreated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +77,17 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
         Bundle bundle = intent.getExtras();
         if(bundle != null){
             mGoBagName = bundle.getString(TaskContract.GO_BAG_NAME);
+            mTimeCreated = bundle.getLong(TaskContract.GO_BAG_TIME_STAMP);
             mGoBagNameEditText.setText(mGoBagName);
         }
+
+        // Set the layout for the RecyclerView to be a linear layout, which measures and
+        // positions items within a RecyclerView into a linear list
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Initialize the adapter and attach it to the RecyclerView
+        mAdapter = new GoBagItemsAdapter(this, mCursor ,this, this);
+        mRecyclerView.setAdapter(mAdapter);
 
         /*
          Ensure a loader is initialized and active. If the loader doesn't already exist, one is
@@ -122,7 +138,7 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
         ContentValues contentValues = new ContentValues();
         // Put the task description and selected mPriority into the ContentValues
         contentValues.put(GoBagContract.GoBagEntery.COLUMN_ITEM, mSpinner.getSelectedItem().toString());
-        contentValues.put(GoBagContract.GoBagEntery.COLUMN_NAME, mGoBagNameEditText.getText().toString());
+        contentValues.put(GoBagContract.GoBagEntery.COLUMN_GO_BAG_ID, mTimeCreated);
         contentValues.put(GoBagContract.GoBagEntery.COLUMN_WEIGHT, mWeightOfItem);
         contentValues.put(GoBagContract.GoBagEntery.COLUMN_TIME_STAMP, ts);
 
@@ -130,15 +146,16 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
             // [Hint] Don't forget to call finish() to return to MainActivity after this insert is complete
             try {
                 // Insert the content values via a ContentResolver
-                Uri uri = getContentResolver().insert(GoBagContract.GoBagEntery.CONTENT_GOBAG_URI, contentValues);
+                Uri uri = getContentResolver().insert(GoBagContract.GoBagEntery.CONTENT_ITEM_URI, contentValues);
                 if (uri != null) {
+                    mSpinner.setSelection(0);
+                    mButton.setVisibility(View.GONE);
                     //restarts the loader to get updated data
                     restartLoader();
                 }
             } catch (Exception e) {
             }
         }else{
-            Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -196,22 +213,48 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        String rawQuery = "SELECT *"+
-                " FROM " + GoBagContract.GoBagEntery.GO_BAG_TABLE_NAME
-                +" WHERE "+  GoBagContract.GoBagEntery.COLUMN_NAME+"  = ? "
+        String [] selectionArgs = {mTimeCreated+""};
+
+        //Projection for query
+        String mProjection = GoBagContract.GoBagEntery.COLUMN_ITEM+", "
+                +"SUM("+  GoBagContract.GoBagEntery.COLUMN_WEIGHT+"), "
+                +"COUNT("+  GoBagContract.GoBagEntery.COLUMN_ITEM+"), "
+                + GoBagContract.GoBagEntery.COLUMN_TIME_STAMP+
+                "";
+
+        String rawQuery = "SELECT "+ mProjection +
+                " FROM " + GoBagContract.GoBagEntery.ITEMS_TABLE_NAME
+                +" WHERE "+  GoBagContract.GoBagEntery.COLUMN_GO_BAG_ID+"  = ? "
+                +" GROUP BY 1 "
                 +" ORDER BY "+ GoBagContract.GoBagEntery.COLUMN_TIME_STAMP+" DESC "
                 +"" ;
 
-        return new GoBagLoader(this, null, rawQuery, null);
+        return new GoBagLoader(this, null, rawQuery, selectionArgs);
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        Toast.makeText(getApplicationContext(), data.getCount()+"", Toast.LENGTH_SHORT).show();
+        mCursor = data;
+        mAdapter.swapCursor(mCursor);
+        //If result is empty show empty state text view
+        //if(mCursor.getCount() < 1) mEmptyStateTextView.setVisibility(View.VISIBLE);
+            //if result is not empty hide empty sate text view
+        //else mEmptyStateTextView.setVisibility(View.GONE);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
+        mCursor = null;
+        mAdapter.swapCursor(null);
+    }
+
+    @Override
+    public void onClick(int position) {
+
+    }
+
+    @Override
+    public void onLongClick(int position) {
 
     }
 }

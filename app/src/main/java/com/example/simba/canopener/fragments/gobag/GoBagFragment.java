@@ -135,10 +135,12 @@ public class GoBagFragment extends Fragment implements LoaderManager.LoaderCallb
         mCursor.moveToPosition(position);
         //get name of selected go bag
         String goBagName = mCursor.getString(0);
+        long timeCreated = mCursor.getLong(1);
 
-        //Start GoBagListActivity with go bag name
+        //Start GoBagListActivity with go bag name and time created
         Intent intent = new Intent(getContext(), GoBagListActivity.class);
         intent.putExtra(TaskContract.GO_BAG_NAME, goBagName);
+        intent.putExtra(TaskContract.GO_BAG_TIME_STAMP, timeCreated);
         startActivity(intent);
     }
 
