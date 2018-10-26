@@ -58,17 +58,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/weight_of_go_bag_text_view"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:padding="@dimen/dim_medium"
                 android:text="@string/weight_of_go_bag"/>
 
             <TextView
-                android:id="@+id/weight_of_go_bag_text_view"
-                android:layout_width="wrap_content"
+                android:id="@+id/number_of_items_text_view"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:padding="@dimen/dim_medium"
-                android:text="0kg"/>
+                android:text="@string/numbers_of_items"
+                android:gravity="end"/>
         </LinearLayout>
 
         <View
@@ -79,7 +83,8 @@
         <Spinner
             android:id="@+id/go_bag_spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dim_small"/>
 
         <LinearLayout
             android:layout_width="match_parent"

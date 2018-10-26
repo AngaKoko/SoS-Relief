@@ -24,6 +24,9 @@
     <string name="items">Items</string>
     <string name="item">Item</string>
     <string name="items_in_my_go_bag">Items in my go bag</string>
+    <string name="go_bag">Go Bag</string>
+    <string name="numbers_of_items">Numbers of items</string>
+    <string name="delete">Delete</string>
 
     <string name="what_to_expect_during_earthquake">What to expect during an earthquake</string>
     <string name="small_or_medium_quakes">Small or moderate earthquakes</string>

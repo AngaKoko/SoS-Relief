@@ -2,6 +2,7 @@ package com.example.simba.canopener;
 
 import android.app.LoaderManager;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,12 +48,13 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
     RecyclerView mRecyclerView;
     Spinner mSpinner;
 
-    TextView mWeightOfItemTextView, mWeightOfBagTextView;
+    TextView mWeightOfItemTextView, mWeightOfBagTextView, mNumberOfItemsTextView;
     EditText mGoBagNameEditText;
 
     ArrayList<String> mGoBagArray;
     double mWeightOfItem = 0;
     double mWeightOfBag = 0;
+    int mNumberOfItems = 0;
     String mGoBagName;
     long mTimeCreated;
 
@@ -72,6 +75,7 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
         mWeightOfBagTextView = findViewById(R.id.weight_of_go_bag_text_view);
         mWeightOfItemTextView = findViewById(R.id.weight_of_item_text_view);
         mGoBagNameEditText = findViewById(R.id.go_bag_name_edit_text);
+        mNumberOfItemsTextView = findViewById(R.id.number_of_items_text_view);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -200,16 +204,7 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+    private void deleteGoBag(){}
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
@@ -232,14 +227,33 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
         return new GoBagLoader(this, null, rawQuery, selectionArgs);
     }
 
+    /**
+     * Loop through cursor
+     * Calculate total number of items in go bad, and weight of go bag
+     */
+    private void setGoBagProperties(){
+        double weight = 0;
+        int quantity = 0;
+
+        //loop through cursor
+        for(int i = 0; i < mCursor.getCount(); i++){
+            //move cursor to next position
+            mCursor.moveToPosition(i);
+
+            weight += mCursor.getDouble(1);
+            quantity += mCursor.getInt(2);
+
+            //Set values of result
+            mNumberOfItemsTextView.setText(getString(R.string.numbers_of_items)+":  "+quantity);
+            mWeightOfBagTextView.setText(getString(R.string.weight_of_go_bag)+":  "+weight+"kg");
+        }
+    }
+
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mCursor = data;
         mAdapter.swapCursor(mCursor);
-        //If result is empty show empty state text view
-        //if(mCursor.getCount() < 1) mEmptyStateTextView.setVisibility(View.VISIBLE);
-            //if result is not empty hide empty sate text view
-        //else mEmptyStateTextView.setVisibility(View.GONE);
+        setGoBagProperties();
     }
 
     @Override
@@ -256,5 +270,27 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
     @Override
     public void onLongClick(int position) {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.go_bag_list_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            case R.id.menu_delete:
+                deleteGoBag();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
