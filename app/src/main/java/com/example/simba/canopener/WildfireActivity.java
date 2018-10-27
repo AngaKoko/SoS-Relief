@@ -8,10 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.simba.canopener.Adapter.MainFragmentPagerAdapter;
-import com.example.simba.canopener.fragments.WildfireDataFragment;
-import com.example.simba.canopener.fragments.WildfirePreparationsFragment;
-import com.example.simba.canopener.fragments.WildfireThreatsFragment;
-import com.example.simba.canopener.fragments.WildfireVisualsFragment;
 
 public class WildfireActivity extends AppCompatActivity {
 
@@ -33,15 +29,15 @@ public class WildfireActivity extends AppCompatActivity {
         //Reference MainFragmentPagerAdapter
         mPagerAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager());
 
-        setUpViewPager(mViewPager);
+        //setUpViewPager(mViewPager);
     }
 
     private void setUpViewPager(ViewPager viewPager){
         mPagerAdapter.clearFragment();
-        mPagerAdapter.addFragment(new WildfireVisualsFragment(), getString(R.string.visuals));
-        mPagerAdapter.addFragment(new WildfireThreatsFragment(), getString(R.string.threats));
-        mPagerAdapter.addFragment(new WildfirePreparationsFragment(), getString(R.string.safety_measures));
-        mPagerAdapter.addFragment(new WildfireDataFragment(), getString(R.string.data));
+        //mPagerAdapter.addFragment(new WildfireVisualsFragment(), getString(R.string.visuals));
+        //addFragment(new WildfireThreatsFragment(), getString(R.string.threats));
+        //mPagerAdapter.addFragment(new WildfirePreparationsFragment(), getString(R.string.safety_measures));
+        //addFragment(new WildfireDataFragment(), getString(R.string.data));
         viewPager.setAdapter(mPagerAdapter);
 
         mTabLayout.setupWithViewPager(viewPager);

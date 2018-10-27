@@ -16,9 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.simba.canopener.Adapter.EarthquakeAdapter;
 import com.example.simba.canopener.R;
 import com.example.simba.canopener.helpers.MySingleton;
@@ -140,8 +138,6 @@ public class EarthquakeDataFragment extends Fragment {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
-                        Toast.makeText(getContext().getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
 
                     }
                 });

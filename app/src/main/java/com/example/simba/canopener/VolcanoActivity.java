@@ -8,10 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.simba.canopener.Adapter.MainFragmentPagerAdapter;
-import com.example.simba.canopener.fragments.VolcanoDataFragment;
-import com.example.simba.canopener.fragments.VolcanoPreparationFragment;
-import com.example.simba.canopener.fragments.VolcanoThreatsFragment;
-import com.example.simba.canopener.fragments.VolcanoVisualsFragment;
 
 public class VolcanoActivity extends AppCompatActivity {
 
@@ -33,15 +29,15 @@ public class VolcanoActivity extends AppCompatActivity {
         //Reference MainFragmentPagerAdapter
         mPagerAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager());
 
-        setUpViewPager(mViewPager);
+        //setUpViewPager(mViewPager);
     }
 
     private void setUpViewPager(ViewPager viewPager){
-        mPagerAdapter.clearFragment();
-        mPagerAdapter.addFragment(new VolcanoVisualsFragment(), getString(R.string.visuals));
-        mPagerAdapter.addFragment(new VolcanoThreatsFragment(), getString(R.string.threats));
-        mPagerAdapter.addFragment(new VolcanoPreparationFragment(), getString(R.string.safety_measures));
-        mPagerAdapter.addFragment(new VolcanoDataFragment(), getString(R.string.data));
+        //mPagerAdapter.clearFragment();
+        //mPagerAdapter.addFragment(new VolcanoVisualsFragment(), getString(R.string.visuals));
+        //mPagerAdapter.addFragment(new VolcanoThreatsFragment(), getString(R.string.threats));
+        //mPagerAdapter.addFragment(new VolcanoPreparationFragment(), getString(R.string.safety_measures));
+        //mPagerAdapter.addFragment(new VolcanoDataFragment(), getString(R.string.data));
         viewPager.setAdapter(mPagerAdapter);
 
         mTabLayout.setupWithViewPager(viewPager);

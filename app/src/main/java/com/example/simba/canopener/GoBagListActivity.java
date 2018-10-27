@@ -1,12 +1,18 @@
 package com.example.simba.canopener;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.LoaderManager;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,6 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.simba.canopener.Adapter.GoBagItemsAdapter;
+import com.example.simba.canopener.data.DatabaseHelper;
 import com.example.simba.canopener.data.GoBagContract;
 import com.example.simba.canopener.data.TaskContract;
 import com.example.simba.canopener.loaders.GoBagLoader;
@@ -56,7 +63,7 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
     double mWeightOfBag = 0;
     int mNumberOfItems = 0;
     String mGoBagName;
-    long mTimeCreated;
+    static long mTimeCreated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,7 +211,26 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
         }
     }
 
-    private void deleteGoBag(){}
+    /**
+     * delete all items relating to the go bag
+     * @param param time stamp of go bag
+     */
+    private void deleteGoBag(long param){
+        int i, j;
+
+        String args [] = {param+""};
+
+        SQLiteDatabase db = new DatabaseHelper(this).getWritableDatabase();
+        //Delete all items from items_table relating the go bag
+        i = db.delete(GoBagContract.GoBagEntery.ITEMS_TABLE_NAME,
+                GoBagContract.GoBagEntery.COLUMN_GO_BAG_ID+ "= ?", args);
+
+        //Delete goBag
+        j = db.delete(GoBagContract.GoBagEntery.GO_BAG_TABLE_NAME,
+                GoBagContract.GoBagEntery.COLUMN_TIME_STAMP+ " = ?", args);
+
+        if(j > 0) finish();
+    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
@@ -287,10 +313,53 @@ public class GoBagListActivity extends AppCompatActivity implements LoaderManage
                 onBackPressed();
                 return true;
             case R.id.menu_delete:
-                deleteGoBag();
+                DialogFragment deleteDialog = new ConfirmDeleteDialog();
+                deleteDialog.show(getFragmentManager(), "deletePassenger");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    /**
+     * Dialog class
+     * dialog to confirm delete action
+     */
+    public static class ConfirmDeleteDialog extends DialogFragment {
+        GoBagListActivity activity;
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            //Get Instance of Manifest Activity
+            activity = (GoBagListActivity) getActivity();
+            // Use the Builder class for convenient dialog construction
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage(R.string.confirm_delete_of_go_bag)
+                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // delete passenger
+                            activity.deleteGoBag(mTimeCreated);
+                        }
+                    })
+                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // User cancelled the dialog
+                            dialog.dismiss();
+                        }
+                    });
+            // Create the AlertDialog object and return it
+            return builder.create();
+        }
+
+        @Override
+        public void onStart() {
+            super.onStart();
+            ((AlertDialog) getDialog()).getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED);
+        }
+
+        @Override
+        public void onStop() {
+            dismiss();
+            super.onStop();
         }
     }
 }

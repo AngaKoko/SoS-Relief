@@ -8,17 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.simba.canopener.Adapter.MainFragmentPagerAdapter;
-import com.example.simba.canopener.fragments.earthquake.EarthquakeAfterFragment;
-import com.example.simba.canopener.fragments.earthquake.EarthquakeBeforeFragment;
-import com.example.simba.canopener.fragments.earthquake.EarthquakeDataFragment;
-import com.example.simba.canopener.fragments.earthquake.EarthquakeExpectationsFragment;
-import com.example.simba.canopener.fragments.earthquake.EarthquakePreparationFragment;
-import com.example.simba.canopener.fragments.earthquake.EarthquakeVisualsFragment;
-import com.example.simba.canopener.fragments.gobag.EarthquakeGoBagFragment;
-import com.example.simba.canopener.fragments.gobag.FloodGoBagFragment;
+import com.example.simba.canopener.fragments.gobag.BasicSupplyKitFragment;
 import com.example.simba.canopener.fragments.gobag.GoBagFragment;
-import com.example.simba.canopener.fragments.gobag.VolcanoGoBagFragment;
-import com.example.simba.canopener.fragments.gobag.WildfireGoBagFragment;
+import com.example.simba.canopener.fragments.gobag.MaintainingYourKitFragment;
 
 public class GoBagActivity extends AppCompatActivity {
 
@@ -45,11 +37,12 @@ public class GoBagActivity extends AppCompatActivity {
 
     private void setUpViewPager(ViewPager viewPager){
         mPagerAdapter.clearFragment();
-        mPagerAdapter.addFragment(new EarthquakeGoBagFragment(), getString(R.string.earthquake));
-        mPagerAdapter.addFragment(new VolcanoGoBagFragment(), getString(R.string.volcano));
+        mPagerAdapter.addFragment(new BasicSupplyKitFragment(), getString(R.string.basic_items));
+        mPagerAdapter.addFragment(new MaintainingYourKitFragment(), getString(R.string.kit_maintenance));
         mPagerAdapter.addFragment(new GoBagFragment(), getString(R.string.my_go_bag));
-        mPagerAdapter.addFragment(new FloodGoBagFragment(), getString(R.string.flood));
-        mPagerAdapter.addFragment(new WildfireGoBagFragment(), getString(R.string.wildfire));
+        //mPagerAdapter.addFragment(new VolcanoGoBagFragment(), getString(R.string.volcano));
+        //mPagerAdapter.addFragment(new FloodGoBagFragment(), getString(R.string.flood));
+        //mPagerAdapter.addFragment(new WildfireGoBagFragment(), getString(R.string.wildfire));
         viewPager.setAdapter(mPagerAdapter);
 
         mTabLayout.setupWithViewPager(viewPager);

@@ -40,12 +40,12 @@ public class EarthquakeActivity extends AppCompatActivity {
 
     private void setUpViewPager(ViewPager viewPager){
         mPagerAdapter.clearFragment();
-        mPagerAdapter.addFragment(new EarthquakeVisualsFragment(), getString(R.string.visuals));
+        //mPagerAdapter.addFragment(new EarthquakeVisualsFragment(), getString(R.string.visuals));
+        mPagerAdapter.addFragment(new EarthquakeDataFragment(), getString(R.string.data));
         mPagerAdapter.addFragment(new EarthquakeExpectationsFragment(), getString(R.string.expectations));
         mPagerAdapter.addFragment(new EarthquakeBeforeFragment(), getString(R.string.before));
         mPagerAdapter.addFragment(new EarthquakePreparationFragment(), getString(R.string.during));
         mPagerAdapter.addFragment(new EarthquakeAfterFragment(), getString(R.string.after));
-        mPagerAdapter.addFragment(new EarthquakeDataFragment(), getString(R.string.data));
         viewPager.setAdapter(mPagerAdapter);
 
         mTabLayout.setupWithViewPager(viewPager);

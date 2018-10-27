@@ -27,6 +27,50 @@
     <string name="go_bag">Go Bag</string>
     <string name="numbers_of_items">Numbers of items</string>
     <string name="delete">Delete</string>
+    <string name="confirm_delete_of_go_bag">Confirm delete of go bag</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="basic_items">Basic items</string>
+
+    <string name="basic_disaster_kit_1">Make sure your emergency kit is stocked with the items on the checklist below.
+        Most of the items are inexpensive and easy to find, and any one of them could save your life.
+        Once you take a look at the basic items,
+        consider what unique needs your family might have, such as supplies for pets, or seniors.
+        \n\n After an emergency, you may need to survive on your own for several days. Being prepared means having your own food,
+        water and other supplies to last for at least 72 hours. A disaster supplies kit is a collection of basic items your
+        household may need in the event of an emergency.</string>
+
+    <string name="basic_disaster_supply_kit">Basic Disaster Supplies Kit</string>
+    <string name="basic_disaster_kit_2">To assemble your kit, store items in airtight plastic bags and put your entire disaster
+        supplies kit in one or two easy-to-carry containers such as plastic bins or a duffel bag.
+        \n\n A basic emergency supply kit could include the following recommended items:</string>
+    <string name="basic_disaster_kit_3">1.  Water one gallon of water per person per day for at least three days, for drinking and sanitation</string>
+    <string name="basic_disaster_kit_4">2.  Food - at least a three-day supply of non-perishable food</string>
+    <string name="basic_disaster_kit_5">3.  Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert</string>
+    <string name="basic_disaster_kit_6">4.  Flashlight</string>
+    <string name="basic_disaster_kit_7">5.  First aid kit</string>
+    <string name="basic_disaster_kit_8">6.  Extra batteries</string>
+    <string name="basic_disaster_kit_9">7.  Whistle to signal for help</string>
+    <string name="basic_disaster_kit_10">8.  Dust mask to help filter contaminated air and plastic sheeting and duct tape to shelter-in-place</string>
+    <string name="basic_disaster_kit_11">9.  Moist towelettes, garbage bags and plastic ties for personal sanitation</string>
+    <string name="basic_disaster_kit_12">10.  Wrench or pliers to turn off utilities</string>
+    <string name="basic_disaster_kit_13">11.  Manual can opener for food</string>
+    <string name="basic_disaster_kit_14">12.  Local maps</string>
+    <string name="basic_disaster_kit_15">13.  Cell phone with chargers and a backup battery</string>
+
+    <string name="maintaining_your_Kit">Maintaining Your Kit</string>
+    <string name="kit_maintenance">Kit maintenance</string>
+    <string name="maintaining_your_kit_1">After assembling your kit remember to maintain it so it’s ready when needed:</string>
+    <string name="maintaining_your_kit_2">1.  Keep canned food in a cool, dry place</string>
+    <string name="maintaining_your_kit_3">2.  Store boxed food in tightly closed plastic or metal containers</string>
+    <string name="maintaining_your_kit_4">3.  Replace expired items as needed</string>
+    <string name="maintaining_your_kit_5">4.  Re-think your needs every year and update your kit as your family’s needs change.</string>
+
+    <string name="kit_storage_location">Kit Storage Locations</string>
+    <string name="kit_storage_location_1">Since you do not know where you will be when an emergency occurs, prepare supplies for home, work and vehicles.</string>
+    <string name="kit_storage_location_2">Home: \nKeep this kit in a designated place and have it ready in case you have to leave your home quickly. Make sure all family members know where the kit is kept.</string>
+    <string name="kit_storage_location_3">Work: \nBe prepared to shelter at work for at least 24 hours. Your work kit should include food, water and other necessities like medicines, as well as comfortable walking shoes, stored in a “grab and go” case.</string>
+    <string name="kit_storage_location_4">Vehicle: \nIn case you are stranded, keep a kit of emergency supplies in your car.</string>
 
     <string name="what_to_expect_during_earthquake">What to expect during an earthquake</string>
     <string name="small_or_medium_quakes">Small or moderate earthquakes</string>

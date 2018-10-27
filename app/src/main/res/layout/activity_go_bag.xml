@@ -29,7 +29,7 @@
             app:tabSelectedTextColor="@color/colorPrimaryDark"
             android:background="@android:color/white"
             app:tabMode="scrollable"
-            app:tabGravity="fill"/>
+            app:tabGravity="center"/>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

@@ -8,10 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.simba.canopener.Adapter.MainFragmentPagerAdapter;
-import com.example.simba.canopener.fragments.FloodDataFragment;
-import com.example.simba.canopener.fragments.FloodPreparationFragment;
-import com.example.simba.canopener.fragments.FloodThreatsFragment;
-import com.example.simba.canopener.fragments.FloodVisualsFragment;
 
 public class FloodingActivity extends AppCompatActivity {
 
@@ -33,15 +29,15 @@ public class FloodingActivity extends AppCompatActivity {
         //Reference MainFragmentPagerAdapter
         mPagerAdapter = new MainFragmentPagerAdapter(getSupportFragmentManager());
 
-        setUpViewPager(mViewPager);
+        //setUpViewPager(mViewPager);
     }
 
     private void setUpViewPager(ViewPager viewPager){
         mPagerAdapter.clearFragment();
-        mPagerAdapter.addFragment(new FloodVisualsFragment(), getString(R.string.visuals));
-        mPagerAdapter.addFragment(new FloodThreatsFragment(), getString(R.string.threats));
-        mPagerAdapter.addFragment(new FloodPreparationFragment(), getString(R.string.safety_measures));
-        mPagerAdapter.addFragment(new FloodDataFragment(), getString(R.string.data));
+        //mPagerAdapter.addFragment(new FloodVisualsFragment(), getString(R.string.visuals));
+        //mPagerAdapter.addFragment(new FloodThreatsFragment(), getString(R.string.threats));
+        //mPagerAdapter.addFragment(new FloodPreparationFragment(), getString(R.string.safety_measures));
+        //mPagerAdapter.addFragment(new FloodDataFragment(), getString(R.string.data));
         viewPager.setAdapter(mPagerAdapter);
 
         mTabLayout.setupWithViewPager(viewPager);

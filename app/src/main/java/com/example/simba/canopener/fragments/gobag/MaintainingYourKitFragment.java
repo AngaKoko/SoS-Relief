@@ -1,4 +1,4 @@
-package com.example.simba.canopener.fragments;
+package com.example.simba.canopener.fragments.gobag;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.simba.canopener.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class WildfireThreatsFragment extends Fragment {
+public class MaintainingYourKitFragment extends Fragment {
 
 
-    public WildfireThreatsFragment() {
+    public MaintainingYourKitFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class WildfireThreatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_wildfire_threats, container, false);
+        return inflater.inflate(R.layout.fragment_maintaining_your_kit, container, false);
     }
 
 }
