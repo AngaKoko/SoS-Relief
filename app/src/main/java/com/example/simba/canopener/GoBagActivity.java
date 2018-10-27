@@ -37,9 +37,9 @@ public class GoBagActivity extends AppCompatActivity {
 
     private void setUpViewPager(ViewPager viewPager){
         mPagerAdapter.clearFragment();
+        mPagerAdapter.addFragment(new GoBagFragment(), getString(R.string.my_go_bag));
         mPagerAdapter.addFragment(new BasicSupplyKitFragment(), getString(R.string.basic_items));
         mPagerAdapter.addFragment(new MaintainingYourKitFragment(), getString(R.string.kit_maintenance));
-        mPagerAdapter.addFragment(new GoBagFragment(), getString(R.string.my_go_bag));
         //mPagerAdapter.addFragment(new VolcanoGoBagFragment(), getString(R.string.volcano));
         //mPagerAdapter.addFragment(new FloodGoBagFragment(), getString(R.string.flood));
         //mPagerAdapter.addFragment(new WildfireGoBagFragment(), getString(R.string.wildfire));

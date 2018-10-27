@@ -1,6 +1,7 @@
 package com.example.simba.canopener;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,24 +55,34 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void showSnackBar(String message){
+        Snackbar.make(findViewById(R.id.parent_layout), message, Snackbar.LENGTH_LONG).show();
+    }
+
     private void startEarthQuakeActivity(){
         Intent intent = new Intent(this, EarthquakeActivity.class);
         startActivity(intent);
     }
 
     private void startVolcanoActivity(){
-        Intent intent = new Intent(this, VolcanoActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, VolcanoActivity.class);
+        //startActivity(intent);
+        //Inform user function not yet ready
+        showSnackBar(getString(R.string.coming_soon));
     }
 
     private void startFloodActivity(){
-        Intent intent = new Intent(this, FloodingActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, FloodingActivity.class);
+        //startActivity(intent);
+        //Inform user function not yet ready
+        showSnackBar(getString(R.string.coming_soon));
     }
 
     private void startWildfireActivity(){
-        Intent intent = new Intent(this, WildfireActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, WildfireActivity.class);
+        //startActivity(intent);
+        //Inform user function not yet ready
+        showSnackBar(getString(R.string.coming_soon));
     }
 
     private void startMyGoBagActivity(){
